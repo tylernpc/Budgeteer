@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: "Montserrat", serif;
+    margin: 0em;
+    padding: 0em;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+:root {
+    --white: #f2f2f2;
+    --purple: #86377b;
+}
+
+/* top layer of intro page for shapes */
+
+.top-layer {
+    display: flex;
+}
+
+.shape-teardrop {
+    background-color: var(--white);
+    border-radius: 150px;
+    border-bottom-right-radius: 0px;
+    margin-left: 3em;
+    margin-top: 4em;
+    padding: 5em 5em;
+    height: 1em;
+    width: 1em;
+}
+
+.shape-top-o {
+    background: radial-gradient(circle, var(--background) 60%, var(--white) 60%);
+    border: solid var(--white) 24px;
+    border-radius: 50%;
+    margin-left: 3em;
+    margin-top: 8em;
+    height: 4em;
+    width: 4em;
+}
+
+/* top layer of intro page for shapes */
+
+/* bottom layer of intro page for shapes */
+
+.bottom-layer {
+    display: flex;
+}
+
+.shape-bottom-o {
+    background: radial-gradient(circle, var(--background) 60%, var(--white) 60%);
+    border: solid var(--white) 24px;
+    border-radius: 50%;
+    margin-left: 5em;
+    margin-top: 2em;
+    height: 4em;
+    width: 4em;
+}
+
+.shape-left-swish {
+    background-color: var(--white);
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    margin-left: 3em;
+    margin-top: 1em;
+    height: 9em;
+    width: 3.5em;
+}
+
+.shape-right-swish {
+    background-color: var(--white);
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    margin-left: 2em;
+    margin-top: 3em;
+    height: 11em;
+    width: 3.5em;
+}
+
+/* bottom layer of intro page for shapes */
+
+.title {
+    color: var(--white);
+    letter-spacing: 3px;
+    margin-left: 2em;
+    margin-top: 5em;
+    text-transform: uppercase;
+}
+
+.short-intro {
+    color: #9292b3;
+    letter-spacing: 2px;
+    margin: 0em 4em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes move_wave {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1)
+    }
+
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    }
+
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
+}
+
+.waveWrapper {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    z-index: -1;
+}
+
+.waveWrapperInner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    bottom: -1px;
+    background-image: linear-gradient(to top, #86377b 20%, #27273c 80%);
+}
+
+.bgTop {
+    z-index: 15;
+    opacity: 0.5;
+}
+
+.bgMiddle {
+    z-index: 10;
+    opacity: 0.75;
+}
+
+.bgBottom {
+    z-index: 5;
+}
+
+.wave {
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+
+.waveTop {
+    background-size: 50% 100px;
+}
+
+.waveAnimation .waveTop {
+    animation: move-wave 3s;
+    -webkit-animation: move-wave 3s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+.waveMiddle {
+    background-size: 50% 120px;
+}
+
+.waveAnimation .waveMiddle {
+    animation: move_wave 10s linear infinite;
+}
+
+.waveBottom {
+    background-size: 50% 100px;
+}
+
+.waveAnimation .waveBottom {
+    animation: move_wave 15s linear infinite;
+}
+
+@media screen and (min-width: 431px) {
+    * {
+        display: none;
+    }
+}
