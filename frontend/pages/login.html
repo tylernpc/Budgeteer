@@ -9,16 +9,15 @@
 </head>
 
 <body>
-    <div class="shapes">
-        <div class="top-layer">
-            <div class="shape-teardrop"></div>
-            <div class="shape-top-o"></div>
-        </div>
-        <div class="bottom-layer">
-            <div class="shape-bottom-o"></div>
-            <div class="shape-left-swish"></div>
-            <div class="shape-right-swish"></div>
-        </div>
+    <div class="hero">
+        <h2 class="hero-statement">Login</h2>
+
+        <form class="login-form">
+            <input type="text" id="username" name="username" placeholder="Enter username">
+            <input type="text" id="password" name="password" placeholder="Enter password">
+            <input type="button" value="Login" onclick="login()">
+        </form>
+        <p class="sign-up">Don't have an account? <a href="/html/signup.html">Sign Up!</a></p>
     </div>
 
     <div class="wave-background">
@@ -37,9 +36,6 @@
             </div>
         </div>
     </div>
-
-    <h1 class="title">Budgeteer</h1>
-    <p class="short-intro">Take control of your finances. Welcome to Budgeteer.</p>
 
     <button id="cta-btn" class="cta-btn"><a href="/frontend/pages/login.html">Get Started</a></button>
 </body>
