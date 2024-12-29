@@ -8,14 +8,12 @@ app.use(cors());
 const users = [
   {
     userID: 1,
-    userType: "user",
-    username: "Tyler",
+    username: "TYLER",
     password: "password",
   },
   {
     userID: 2,
-    userType: "creator",
-    username: "Kodad",
+    username: "KODAD",
     password: "luna",
   },
 ];
@@ -24,7 +22,6 @@ const users = [
 app.post("/api/users", (req, res) => {
   const user = {
     userID: users.length + 1,
-    userType: req.body.userType,
     username: req.body.username,
     password: req.body.password,
   };

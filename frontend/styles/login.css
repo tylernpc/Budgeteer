@@ -28,7 +28,7 @@
 }
 
 .sign-up {
-    color: white;
+    color: var(--white);
     text-align: center;
 }
 

@@ -1,31 +1,57 @@
 let apiUserString = `http://localhost:3000/api/users`;
 
-async function createUser(){
+async function createUser(userData) {
+  try {
+    let response = await fetch(apiUserString, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userData),
+    });
 
+    if (!response.ok) throw new Error("Failed to create user");
+  } catch (error) {
+    console.error("Error creating user:", error);
+  }
 }
 
-async function getUser(){
-    let response = await fetch(apiUserString);
-    let jsonData = await response.json();
+async function signUp() {
+  let usernameInput = document.getElementById("username").value.toUpperCase();
 
-    console.log(findNames(jsonData));
-}
+  let response = await fetch(apiUserString);
+  let jsonData = await response.json();
 
-function findNames(jsonData){
-    for (let user of jsonData){
-        console.log(user.password);
-    }
-}
+  let userExists = jsonData.some((user) => user.username === usernameInput);
 
+  if (userExists) {
+    throw new Error("Sorry, this username already exists!");
+  }
 
-
-
-
-// new logic
-function generateUserId() {
-  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
-    const r = (Math.random() * 16) | 0;
-    const v = c === "x" ? r : (r & 0x3) | 0x8;
-    return v.toString(16);
+  await createUser({
+    username: usernameInput.toUpperCase(),
+    password: document.getElementById("password").value,
   });
-};
+
+  notLoginBecauseComputerWontLetMe();
+}
+
+async function notLoginBecauseComputerWontLetMe() {
+  let response = await fetch(apiUserString);
+  let jsonData = await response.json();
+
+  let usernameInput = document.getElementById("username").value.toUpperCase();
+  let passwordInput = document.getElementById("password").value;
+
+  for (let user of jsonData) {
+    if (usernameInput == user.username) {
+      if (passwordInput == user.password) {
+        window.localStorage.setItem("user", usernameInput);
+        window.location.replace("/frontend/pages/home.html");
+        return;
+      } else {
+        console.log("Incorrect Password!");
+      }
+    }
+  }
+}
