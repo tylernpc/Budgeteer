@@ -28,7 +28,7 @@ a {
     justify-content: space-between;
 }
 
-.new-purchase {
+.new-purchase h4 {
     margin-left: 2.5em;
 }
 
@@ -59,7 +59,7 @@ a {
 .available-balance {
     color: var(--gray);
     font-size: 17px;
-    margin-left: -1.5em;
+    margin-left: -1.75em;
     position: relative;
     z-index: 2;
 }
@@ -70,6 +70,25 @@ a {
     margin-left: -1em;
     position: relative;
     z-index: 2;
+}
+
+.activity-section {
+    display: flex;
+    justify-content: space-between;
+    margin: 0em 2.25em;
+    margin-top: 2em;
+}
+
+.activity-section p {
+    color: var(--white);
+    background-color: rgb(134, 77, 139);
+    border-color: transparent;
+    border-radius: 18px;
+    padding: 0em 1em;
+}
+
+.activity-section h4 {
+    color: white;
 }
 
 .dot {
