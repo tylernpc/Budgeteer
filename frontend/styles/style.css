@@ -209,7 +209,7 @@ a {
     animation: move_wave 15s linear infinite;
 }
 
-@media screen and (min-width: 431px) {
+@media screen and (min-width: 500px) {
     * {
         display: none;
     }
