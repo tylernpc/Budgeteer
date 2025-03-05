@@ -83,7 +83,7 @@ a {
     color: var(--white);
     background-color: rgb(134, 77, 139);
     border-color: transparent;
-    border-radius: 18px;
+    border-radius: 3px;
     padding: 0em 1em;
 }
 
